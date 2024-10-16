@@ -1,0 +1,83 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+@keyframes shapeMover {
+  0% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-shapeMover {
+  animation-name: shapeMover;
+  animation-duration: 9s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+
+.wave-effect {
+  position: relative;
+  width: 200%; /* Increase the width to extend the wave effect */
+  height: 100%; /* Cover the full height */
+  background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, rgba(255, 0, 0, 0) 70%);
+  transform: translateX(-50%); /* Center the wave */
+  animation: wave-animation 4s ease-in-out infinite; /* Animation for smooth effect */
+}
+
+@keyframes wave-animation {
+  0% {
+      transform: translateX(-50%) scale(1);
+  }
+  50% {
+      transform: translateX(-50%) scale(1.1); /* Slightly scale up */
+  }
+  100% {
+      transform: translateX(-50%) scale(1);
+  }
+}

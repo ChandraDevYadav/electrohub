@@ -1,0 +1,20 @@
+.wave-effect {
+    position: relative;
+    width: 200%; /* Increase the width to extend the wave effect */
+    height: 100%; /* Cover the full height */
+    background: radial-gradient(circle, rgba(255, 0, 0, 0.2) 0%, rgba(255, 0, 0, 0) 70%);
+    transform: translateX(-50%); /* Center the wave */
+    animation: wave-animation 4s ease-in-out infinite; /* Animation for smooth effect */
+}
+
+@keyframes wave-animation {
+    0% {
+        transform: translateX(-50%) scale(1);
+    }
+    50% {
+        transform: translateX(-50%) scale(1.1); /* Slightly scale up */
+    }
+    100% {
+        transform: translateX(-50%) scale(1);
+    }
+}
