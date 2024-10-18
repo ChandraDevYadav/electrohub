@@ -7,7 +7,7 @@ const SmallNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <div className="bg-[#141414] py-3 px-2 lg:hidden">
+    <div className="bg-[#141414] py-3 px-2 lg:hidden sticky top-0 z-50">
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
@@ -19,7 +19,7 @@ const SmallNavbar = () => {
 
         {/* Hamburger Menu for Mobile */}
         <div className="flex justify-between items-center gap-12 pr-1">
-          <FaCartPlus className="text-white text-2xl" />
+          <Link to='/cart'><FaCartPlus className="text-white text-2xl" /></Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
             className="text-white text-2xl"
@@ -35,12 +35,12 @@ const SmallNavbar = () => {
           <div className="w-1/2 relative">
             {/* Close Icon */}
             
-            <div className="w-full absolute z-10 bg-[#141414] mt-3 -left-2 overflow-scroll">
+            <div className="w-full absolute z-50 bg-[#141414] mt-3 -left-2">
             {/* <div className="flex justify-start items-start px-4 py-2">
               
             <input type="text" placeholder="Search" className="border-2 border-white bg-transparent pl-2 w-full"/>
             </div> */}
-            <ul className="w-full bg-[#141414] mt-3 overflow-scroll">
+            <ul className="w-full bg-[#141414] mt-3 z-50">
               <li>
                 <Link
                   className="rounded-t text-white text-lg pb-4 hover:bg-red-600 hover:text-white px-6 font-medium block whitespace-no-wrap"

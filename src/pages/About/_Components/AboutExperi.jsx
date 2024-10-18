@@ -3,7 +3,7 @@ import React from 'react';
 const AboutExperi = () => {
     return (
         <div className="bg-[#2e2e2e]">
-            <div className='flex justify-center items-center gap-20 pb-28 pt-16 md:pt-16 relative z-10'>
+            <div className='flex justify-center items-center gap-20 pb-12 md:pb-28 pt-16 md:pt-16 relative z-10'>
             <div className='grid grid-cols-1 md:grid-cols-4 gap-y-8 md:gap-y-0'>
                 <div className='border-r-0 md:border-r-2 border-b-2 md:border-b-0 border-white pb-6 md:pb-0 '>
                     <p className='text-5xl font-bold text-white text-center'>20 <span className='text-red-600'>+</span></p>

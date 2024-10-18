@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 const Navbar = () => {
   return (
-    <div className="hidden lg:block">
+    <div className="hidden lg:block sticky top-0 z-50">
       <div className="grid grid-cols-8 py-3 px-2 bg-[#141414]">
       <div className="col-span-2">
         <div className="flex justify-center items-center">

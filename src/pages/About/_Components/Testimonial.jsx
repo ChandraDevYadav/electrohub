@@ -3,7 +3,7 @@ import Carousel from './Carousel'
 
 const Testimonial = () => {
     return (
-        <div className="bg-[#e3e1e1] px-4 md:px-36 py-28">
+        <div className="bg-[#e3e1e1] px-4 md:px-36 py-12 md:py-28">
             <div className="flex gap-2 md:gap-4 justify-start items-center">
                 <div className="w-8 md:w-12 rounded-full h-[2px] bg-red-600"></div>
                 <h1 className="text-red-600 font-medium">OUR HAPPY CLIENTS</h1>

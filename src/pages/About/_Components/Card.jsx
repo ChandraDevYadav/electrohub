@@ -28,9 +28,9 @@ const Card = ({ image, title, profession }) => {
           </a>
           
         </div>
-        <div className="absolute top-[77%] p-6 text-start bg-white z-50 w-1/2">
+        <div className="absolute top-[77%] p-6 text-start bg-white z-40 w-1/2">
         <h3 className="text-xl font-semibold text-gray-800">{title}</h3>
-        <p className="text-gray-500">{profession}</p>
+        <p className="text-gray-500 text-sm">{profession}</p>
       </div>
       </div>
 
