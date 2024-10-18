@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { CiSearch } from "react-icons/ci";
-import { FaAngleDown, FaCartPlus, FaPhone, FaBars, FaTimes } from "react-icons/fa";
+import { FaAngleDown, FaCartPlus, FaPhone, FaBars, FaTimes, FaSearch } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import SearchAlertDialog from "./_Components/SearchAlertDialog";
 
 const SmallNavbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -11,14 +12,15 @@ const SmallNavbar = () => {
       <div className="flex justify-between items-center">
         {/* Logo */}
         <div className="flex items-center">
-          <Link to='/'><img src="/logo.png" className="w-12" alt="Electro Hub Logo" /></Link>
-          <p className="text-2xl text-white font-bold ml-2">
-            ELECTRO <span className="text-3xl text-red-600">HUB</span>
+          <Link to='/'><img src="/logo.png" className="w-10" alt="Electro Hub Logo" /></Link>
+          <p className="text-sm text-white font-bold ml-2">
+            ELECTRO <span className="text-xl text-red-600">HUB</span>
           </p>
         </div>
 
         {/* Hamburger Menu for Mobile */}
-        <div className="flex justify-between items-center gap-12 pr-1">
+        <div className="flex justify-between items-center gap-8 pr-1">
+          <SearchAlertDialog/>
           <Link to='/cart'><FaCartPlus className="text-white text-2xl" /></Link>
           <button
             onClick={() => setMenuOpen(!menuOpen)}
@@ -36,22 +38,10 @@ const SmallNavbar = () => {
             {/* Close Icon */}
             
             <div className="w-full absolute z-50 bg-[#141414] mt-3 -left-2">
-            {/* <div className="flex justify-start items-start px-4 py-2">
-              
-            <input type="text" placeholder="Search" className="border-2 border-white bg-transparent pl-2 w-full"/>
-            </div> */}
             <ul className="w-full bg-[#141414] mt-3 z-50">
               <li>
                 <Link
-                  className="rounded-t text-white text-lg pb-4 hover:bg-red-600 hover:text-white px-6 font-medium block whitespace-no-wrap"
-                  to="/"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/about"
                 >
                   About
@@ -59,7 +49,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/team"
                 >
                   Team
@@ -67,7 +57,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/pricing"
                 >
                   Pricing
@@ -75,7 +65,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/appointment"
                 >
                   Appointment
@@ -83,7 +73,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/gallery"
                 >
                   Gallery
@@ -91,7 +81,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/faq"
                 >
                   Faq
@@ -99,7 +89,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/service"
                 >
                   Service
@@ -107,7 +97,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/blog"
                 >
                   Blog
@@ -115,7 +105,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/product"
                 >
                   Products
@@ -123,7 +113,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/checkout"
                 >
                   Checkout
@@ -131,7 +121,7 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/contact"
                 >
                   Contact
@@ -139,7 +129,15 @@ const SmallNavbar = () => {
               </li>
               <li>
                 <Link
-                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-lg pb-4 font-medium block whitespace-no-wrap"
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
+                  to="/setting"
+                >
+                  Setting
+                </Link>
+              </li>
+              <li>
+                <Link
+                  className="rounded-t text-white hover:bg-red-600 hover:text-white px-6 text-sm pb-4 font-medium block whitespace-no-wrap"
                   to="/login"
                 >
                   Login

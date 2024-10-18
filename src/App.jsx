@@ -20,6 +20,7 @@ import Cart from "./pages/Cart/Cart";
 import Setting from "./pages/Setting/Setting";
 import Login from "./pages/Login/Login";
 import Pricing from "./pages/Pricing/Pricing";
+import ScrollToTopButton from "./Components/ScrollButton/ScrollToTopButton";
 
 
 function App() {
@@ -47,6 +48,7 @@ function App() {
           <Route path="/setting" element={<Setting />} />
           <Route path="/login" element={<Login />} />
         </Routes>
+        <ScrollToTopButton/>
         <Footer/>
       </div>
   );
