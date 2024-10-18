@@ -1,6 +1,6 @@
 import React from "react";
 import { CiSearch } from "react-icons/ci";
-import { FaAngleDown, FaCartPlus, FaPhone, FaSearch } from "react-icons/fa";
+import { FaAngleDown, FaCartPlus, FaPhone, FaSearch, FaUser } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 const Navbar = () => {
@@ -163,14 +163,13 @@ const Navbar = () => {
         </div>
       </div>
       <div className="col-span-2 border-l-2 border-l-gray-300">
-        <div className="flex justify-start items-center ml-3">
+        <div className="flex justify-center items-center mt-2">
         <CiSearch className="text-3xl mx-4 hover:text-red-600 text-white"/>
         <Link to='/cart' className=""><FaCartPlus className="text-3xl mx-4 text-white hover:text-red-600"/></Link>
-        <FaPhone className="text-lg text-white mx-4 hover:text-red-600"/>
         <div className="mx-4">
-            <p className="text-gray-300 text-sm font-medium">Call Anytime</p>
-            <Link to='' className="hover:text-red-600 text-white font-bold">(+977) 980-0000000</Link>
+            <Link to='' className="hover:text-red-600 text-white font-bold"><FaPhone className="text-xl text-white mx-4 hover:text-red-600"/></Link>
         </div>
+        <Link to='/login' className="text-white text-lg font-semibold">Login</Link>
         </div>
       </div>
     </div>
