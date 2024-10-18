@@ -52,7 +52,7 @@ const CartPage = () => {
                   <thead>
                     <tr className="bg-gray-200">
                       <th className="px-4 sm:p-3 text-gray-600">Image</th>
-                      <th className="p-2 text-sm sm:p-3 text-gray-600">P Name</th>
+                      <th className="p-2 sm:p-3 text-gray-600">P Name</th>
                       <th className="p-2 sm:p-3 text-gray-600">Price</th>
                       <th className="p-2 sm:p-3 text-gray-600">Quantity</th>
                       <th className="p-2 sm:p-3 text-gray-600">Total</th>
@@ -93,19 +93,19 @@ const CartPage = () => {
           <div className="col-span-1 space-y-6">
             <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
               <h2 className="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Use Coupon</h2>
-              <div className='flex flex-col sm:flex-row justify-start items-center gap-4'>
+              <div className='flex flex-col justify-start items-center gap-4'>
                 <input
                   type="text"
                   placeholder="Enter Promo Code"
-                  className="w-full sm:w-2/3 px-4 py-2 sm:py-3 border border-gray-300 rounded-md"
+                  className="w-full px-4 py-2 sm:py-3 border border-gray-300 rounded-md"
                 />
-                <button className="w-full sm:w-auto bg-red-600 text-white font-bold px-6 py-2 sm:px-8 sm:py-3 rounded-md hover:bg-red-700 transition">
+                <button className="w-full bg-red-600 text-white font-bold px-6 py-2 sm:px-8 sm:py-3 rounded-md hover:bg-red-700 transition">
                   Apply Coupon
                 </button>
               </div>
             </div>
 
-            <div className="bg-white p-4 sm:p-6 rounded-lg shadow-lg">
+            <div className="bg-white px-4 py-10 sm:p-6 rounded-lg shadow-lg">
               <h2 className="text-xl sm:text-2xl font-medium mb-4 sm:mb-6">Order Summary</h2>
               <div className="flex justify-between mb-2 sm:mb-4">
                 <span className="text-gray-600">Subtotal</span>
@@ -115,7 +115,7 @@ const CartPage = () => {
                 <span className="text-gray-600">Shipping</span>
                 <span className="font-semibold">$5.00</span>
               </div>
-              <div className="flex justify-between text-lg sm:text-xl font-semibold mb-4 sm:mb-6">
+              <div className="flex justify-between text-lg sm:text-xl font-semibold mb-4 sm:mb-6 border-t border-t-gray-300 py-3">
                 <span>Total</span>
                 <span>${getTotalPrice() + 5}</span>
               </div>

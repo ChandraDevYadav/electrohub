@@ -29,11 +29,18 @@ const products = [
 ];
 
 const StarRating = ({ rating }) => {
+  const [userRating, setUserRating] = useState(rating);
+
+  const handleStarClick = (index) => {
+    setUserRating(index + 1); // Update rating
+    console.log("User rating:", index + 1); // Log rating to console
+  };
+
   return (
     <div className="flex gap-1 mb-3">
       {Array.from({ length: 5 }, (v, i) => (
-        <span key={i} className="text-red-600">
-          {i < rating ? <AiFillStar /> : <AiOutlineStar />}
+        <span key={i} className="text-red-600 cursor-pointer" onClick={() => handleStarClick(i)}>
+          {i < userRating ? <AiFillStar /> : <AiOutlineStar />}
         </span>
       ))}
     </div>
@@ -116,21 +123,20 @@ const Product = () => {
           </div>
       </div>
       <div className="flex p-4 space-x-4 px-4 md:px-36 py-4">
-        {/* Left Side: Filters */}
         <div className="w-1/4 h-1/2 bg-gray-100 p-4 rounded-md">
           <div className="mb-4">
             <h2 className="font-bold mb-2">Color</h2>
             <div className="space-y-2">
               {["Red", "Blue", "Green", "Black", "Yellow", "White", "Gray"].map((color) => (
-                <label key={color} className="flex items-center">
-                  <input
-                    type="checkbox"
-                    checked={selectedColors.includes(color)}
-                    onChange={() => handleColorChange(color)}
-                    className="mr-2"
-                  />
-                  {color}
-                </label>
+                <label key={color} className="flex items-center text-[12px] md:text-lg">
+                <input
+                  type="checkbox"
+                  checked={selectedColors.includes(color)}
+                  onChange={() => handleColorChange(color)}
+                  className="mr-2 w-[7px] md:w-3 h-[7px] md:h-3 checked:bg-red-600 checked:border-transparent"
+                />
+                {color}
+              </label>
               ))}
             </div>
           </div>
@@ -138,12 +144,12 @@ const Product = () => {
             <h2 className="font-bold mb-2">Tags</h2>
             <div className="space-y-2">
               {["New", "Featured", "Popular", "Discount"].map((tag) => (
-                <label key={tag} className="flex items-center">
+                <label key={tag} className="flex items-center text-[12px] md:text-lg">
                   <input
                     type="checkbox"
                     checked={selectedTags.includes(tag)}
                     onChange={() => handleTagChange(tag)}
-                    className="mr-2"
+                    className="mr-2 w-[7px] md:w-3 h-[7px] md:h-3 checked:bg-red-600 checked:border-transparent"
                   />
                   {tag}
                 </label>
@@ -152,11 +158,9 @@ const Product = () => {
           </div>
         </div>
 
-        {/* Right Side: Products */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full">
           {filteredProducts.map((product) => (
             <div key={product.id} className="border rounded-md p-4">
-              {/* <img src={product.image} alt={product.name} className="w-full h-[16rem] mb-4" /> */}
               <div className="relative overflow-hidden w-full rounded-lg">
                 <img
                   src={product.image}
@@ -170,8 +174,10 @@ const Product = () => {
               <AddToCartButton/>
               </div>
               <p className="text-gray-600 my-2">${product.price.toFixed(2)}</p>
+              <div className='flex justify-start items-center'>
               <StarRating rating={product.rating} />
-              {/* <Link to={`/product/${product.id}`} className="mt-2 text-blue-500">View Details</Link> */}
+              {/* <p className='text-sm'>(+4) 1.3M </p> */}
+              </div>
               </div>
             </div>
           ))}
